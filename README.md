@@ -1,6 +1,6 @@
 # Badan Pusat Statistik SSO (Single Sign-On)
 [![Latest Version](https://img.shields.io/github/release/irsadarief/jkd-sso.svg?style=flat-square)](https://github.com/irsadarief/jkd-sso/releases)
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+[![Software License](https://img.shields.io/github/license/irsadarief/jkd-sso?style=flat-square)](LICENSE.md)
 [![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/irsadarief/jkd-sso.svg?style=flat-square)](https://scrutinizer-ci.com/g/irsadarief/jkd-sso/code-structure)
 [![Quality Score](https://img.shields.io/scrutinizer/g/irsadarief/jkd-sso.svg?style=flat-square)](https://scrutinizer-ci.com/g/irsadarief/jkd-sso)
 [![Total Downloads](https://img.shields.io/packagist/dt/irsadarief/jkd-sso.svg?style=flat-square)](https://packagist.org/packages/irsadarief/jkd-sso)
