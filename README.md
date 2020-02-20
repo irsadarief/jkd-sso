@@ -16,7 +16,7 @@ Untuk yang belum menginstall composer, informasi mengenai instalasi dan pengguna
 
 ## Penggunaan
 
-Untuk menggunakan library ini bisa dengan `\IrsadArief\OAuth2\Client\Provider\Keycloak` sebagai provider.
+Untuk menggunakan library ini bisa dengan `\JKD\SSO\Client\Provider\Keycloak` sebagai provider.
 
 Untuk `authServerUrl` Anda dapat menuliskan https://sso.bps.go.id .
 
@@ -26,7 +26,7 @@ untuk `realm` anda dapat menuliskan `pegawai-bps`
 ## Contoh Kode
 
 ```php
-$provider = new IrsadArief\OAuth2\Client\Provider\Keycloak([
+$provider = new JKD\SSO\Client\Provider\Keycloak([
     'authServerUrl'         => 'https://sso.bps.go.id',
     'realm'                 => 'pegawai-bps',
     'clientId'              => '{keycloak-client-id}',
@@ -77,7 +77,7 @@ if (!isset($_GET['code'])) {
 ## Memperbarui Token
 
 ```php
-$provider = new IrsadArief\OAuth2\Client\Provider\Keycloak([
+$provider = new JKD\SSO\Client\Provider\Keycloak([
     'authServerUrl'         => 'https://sso.bps.go.id',
     'realm'                 => 'pegawai-bps',
     'clientId'              => '{keycloak-client-id}',
