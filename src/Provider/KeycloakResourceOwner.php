@@ -1,6 +1,6 @@
 <?php
 
-namespace IrsadArief\OAuth2\Client\Provider;
+namespace JKD\SSO\Client\Provider;
 
 use League\OAuth2\Client\Provider\ResourceOwnerInterface;
 

@@ -12,6 +12,8 @@ Untuk menginstall, gunakan composer:
 ```
 composer require irsadarief/jkd-sso
 ```
+Untuk yang belum menginstall composer, informasi mengenai instalasi dan penggunaan composer dapat diakses [disini](https://github.com/composer/composer).
+
 ## Penggunaan
 
 Untuk menggunakan library ini bisa dengan `\IrsadArief\OAuth2\Client\Provider\Keycloak` sebagai provider.
@@ -20,59 +22,54 @@ Untuk `authServerUrl` Anda dapat menuliskan https://sso.bps.go.id .
 
 untuk `realm` anda dapat menuliskan `pegawai-bps`
 
+
 ## Contoh Kode
 
 ```php
-$provider = new Stevenmaguire\OAuth2\Client\Provider\Keycloak([
-    'authServerUrl'         => '{keycloak-server-url}',
-    'realm'                 => '{keycloak-realm}',
+$provider = new IrsadArief\OAuth2\Client\Provider\Keycloak([
+    'authServerUrl'         => 'https://sso.bps.go.id',
+    'realm'                 => 'pegawai-bps',
     'clientId'              => '{keycloak-client-id}',
     'clientSecret'          => '{keycloak-client-secret}',
-    'redirectUri'           => 'https://example.com/callback-url',
-    'encryptionAlgorithm'   => 'RS256',                             // optional
-    'encryptionKeyPath'     => '../key.pem'                         // optional
-    'encryptionKey'         => 'contents_of_key_or_certificate'     // optional
+    'redirectUri'           => 'https://example.com/callback-url'
 ]);
 
 if (!isset($_GET['code'])) {
 
-    // If we don't have an authorization code then get one
+    // Untuk mendapatkan authorization code
     $authUrl = $provider->getAuthorizationUrl();
     $_SESSION['oauth2state'] = $provider->getState();
     header('Location: '.$authUrl);
     exit;
 
-// Check given state against previously stored one to mitigate CSRF attack
+// Mengecek state yang disimpan saat ini untuk memitigasi serangan CSRF
 } elseif (empty($_GET['state']) || ($_GET['state'] !== $_SESSION['oauth2state'])) {
 
     unset($_SESSION['oauth2state']);
-    exit('Invalid state, make sure HTTP sessions are enabled.');
+    exit('Invalid state');
 
 } else {
 
-    // Try to get an access token (using the authorization coe grant)
     try {
         $token = $provider->getAccessToken('authorization_code', [
             'code' => $_GET['code']
         ]);
     } catch (Exception $e) {
-        exit('Failed to get access token: '.$e->getMessage());
+        exit('Gagal mendapatkan akses token : '.$e->getMessage());
     }
 
-    // Optional: Now you have a token you can look up a users profile data
+    // Opsional: Setelah mendapatkan token, anda dapat melihat data profil pengguna
     try {
 
-        // We got an access token, let's now get the user's details
         $user = $provider->getResourceOwner($token);
 
-        // Use these details to create a new profile
         printf('Hello %s!', $user->getName());
 
     } catch (Exception $e) {
-        exit('Failed to get resource owner: '.$e->getMessage());
+        exit('Gagal Mendapatkan Data Pengguna: '.$e->getMessage());
     }
 
-    // Use this to interact with an API on the users behalf
+    // Gunakan token ini untuk berinteraksi dengan API di sisi pengguna
     echo $token->getToken();
 }
 ```
@@ -80,11 +77,11 @@ if (!isset($_GET['code'])) {
 ## Memperbarui Token
 
 ```php
-$provider = new Stevenmaguire\OAuth2\Client\Provider\Keycloak([
-    'authServerUrl'     => '{keycloak-server-url}',
-    'realm'             => '{keycloak-realm}',
-    'clientId'          => '{keycloak-client-id}',
-    'clientSecret'      => '{keycloak-client-secret}',
+$provider = new IrsadArief\OAuth2\Client\Provider\Keycloak([
+    'authServerUrl'         => 'https://sso.bps.go.id',
+    'realm'                 => 'pegawai-bps',
+    'clientId'              => '{keycloak-client-id}',
+    'clientSecret'          => '{keycloak-client-secret}',
     'redirectUri'       => 'https://example.com/callback-url',
 ]);
 

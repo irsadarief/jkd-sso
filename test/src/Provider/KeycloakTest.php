@@ -5,7 +5,7 @@ namespace
     $mockFileGetContents = null;
 }
 
-namespace Stevenmaguire\OAuth2\Client\Provider
+namespace JKD\SSO\Client\Provider
 {
     function file_get_contents()
     {
@@ -21,7 +21,7 @@ namespace Stevenmaguire\OAuth2\Client\Provider
     }
 }
 
-namespace Stevenmaguire\OAuth2\Client\Test\Provider
+namespace JKD\SSO\Client\Test\Provider
 {
     use League\OAuth2\Client\Tool\QueryBuilderTrait;
     use Mockery as m;

@@ -1,6 +1,6 @@
 <?php
 
-namespace IrsadArief\OAuth2\Client\Provider;
+namespace JKD\SSO\Client\Provider;
 
 use Exception;
 use Firebase\JWT\JWT;
@@ -9,7 +9,7 @@ use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
 use League\OAuth2\Client\Token\AccessToken;
 use League\OAuth2\Client\Tool\BearerAuthorizationTrait;
 use Psr\Http\Message\ResponseInterface;
-use IrsadArief\OAuth2\Client\Provider\Exception\EncryptionConfigurationException;
+use JKD\SSO\Client\Provider\Exception\EncryptionConfigurationException;
 
 class Keycloak extends AbstractProvider
 {

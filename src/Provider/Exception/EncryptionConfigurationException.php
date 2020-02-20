@@ -1,6 +1,6 @@
 <?php
 
-namespace IrsadArief\OAuth2\Client\Provider\Exception;
+namespace JKD\SSO\Client\Provider\Exception;
 
 use Exception;
 

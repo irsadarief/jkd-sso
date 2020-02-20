@@ -4,7 +4,7 @@ require 'vendor/autoload.php';
 
 session_start();
 
-$provider = new IrsadArief\OAuth2\Client\Provider\Keycloak([
+$provider = new JKD\SSO\Client\Provider\Keycloak([
     'authServerUrl'             => '',
     'realm'                     => '',
     'clientId'                  => '',
