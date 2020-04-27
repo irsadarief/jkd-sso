@@ -25,7 +25,7 @@ class KeycloakResourceOwner implements ResourceOwnerInterface
 
     public function getEmail()
     {
-        return $this->response['preferred_username']."@bps.go.id" ?: null;
+        return $this->response['username']."@bps.go.id" ?: null;
     }
 
     public function getName()
@@ -35,12 +35,12 @@ class KeycloakResourceOwner implements ResourceOwnerInterface
 
     public function getNip()
     {
-        return $this->response['nip'] ?: null;
+        return $this->response['nip-lama'] ?: null;
     }
 
     public function getUsername()
     {
-        return $this->response['preferred_username'] ?: null;
+        return $this->response['username'] ?: null;
     }
 
     public function getnamaDepan()
@@ -51,6 +51,46 @@ class KeycloakResourceOwner implements ResourceOwnerInterface
     public function getNamaBelakang()
     {
         return $this->response['family_name'] ?: null;
+    }
+    public function getProvinsi()
+    {
+        return $this->response['provinsi'] ?: null;
+    }
+    public function getKodeOrganisasi()
+    {
+        return $this->response['organisasi'] ?: null;
+    }
+    public function getKodeProvinsi()
+    {
+        return substr($this->response['organisasi'],0,2) ?: null;
+    }
+    public function getKodeKabupaten()
+    {
+        return substr($this->response['organisasi'],2,2) ?: null;
+    }
+    public function getAlamatKantor()
+    {
+        return $this->response['alamat-kantor'] ?: null;
+    }
+    public function getJabatan()
+    {
+        return $this->response['jabatan'] ?: null;
+    }
+    public function getGolongan()
+    {
+        return $this->response['golongan'] ?: null;
+    }
+    public function getKabupaten()
+    {
+        return $this->response['kabupaten'] ?: null;
+    }
+    public function getNipBaru()
+    {
+        return $this->response['nip'] ?: null;
+    }
+    public function getEselon()
+    {
+        return $this->response['eselon'] ?: null;
     }
     public function toArray()
     {

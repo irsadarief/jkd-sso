@@ -7,7 +7,7 @@
 
 ## Instalasi
 
-Untuk menginstall, gunakan composer:
+Untuk menginstall, anda dapat menggunakan composer:
 
 ```
 composer require irsadarief/jkd-sso
@@ -62,8 +62,20 @@ if (!isset($_GET['code'])) {
     try {
 
         $user = $provider->getResourceOwner($token);
-
-        printf('Hello %s!', $user->getName());
+        echo "Nama : " $user->getName();
+        echo "E-Mail : " $user->getEmail();
+        echo "Username : " $user->getUsername();
+        echo "NIP : " $user->getNip();
+        echo "NIP Baru : " $user->getNipBaru();
+        echo "Kode Organisasi : " $user->getKodeOrganisasi();
+        echo "Kode Provinsi : " $user->getKodeProvinsi();
+        echo "Kode Kabupaten : " $user->getKodeKabupaten();
+        echo "Alamat Kantor : " $user->getAlamatKantor();
+        echo "Provinsi : " $user->getProvinsi();
+        echo "Kabupaten : " $user->getKabupaten();
+        echo "Golongan : " $user->getGolongan();
+        echo "Jabatan : " $user->getJabatan();
+        echo "Eselon : " $user->getEselon();
 
     } catch (Exception $e) {
         exit('Gagal Mendapatkan Data Pengguna: '.$e->getMessage());
@@ -73,6 +85,13 @@ if (!isset($_GET['code'])) {
     echo $token->getToken();
 }
 ```
+Penggunaan API untuk mengakses data pegawai dapat melihat pada [api-pegawai](https://git.bps.go.id/jkd-repo/api-pegawai).
+
+## Mendapatkan link Logout
+```php
+$url_logout = $provider->getLogoutUrl()
+```
+
 
 ## Memperbarui Token
 
