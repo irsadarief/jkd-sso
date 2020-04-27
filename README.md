@@ -29,8 +29,8 @@ untuk `realm` anda dapat menuliskan `pegawai-bps`
 $provider = new JKD\SSO\Client\Provider\Keycloak([
     'authServerUrl'         => 'https://sso.bps.go.id',
     'realm'                 => 'pegawai-bps',
-    'clientId'              => '{keycloak-client-id}',
-    'clientSecret'          => '{keycloak-client-secret}',
+    'clientId'              => '{client-id}',
+    'clientSecret'          => '{client-secret}',
     'redirectUri'           => 'https://example.com/callback-url'
 ]);
 
@@ -62,20 +62,20 @@ if (!isset($_GET['code'])) {
     try {
 
         $user = $provider->getResourceOwner($token);
-        echo "Nama : " $user->getName();
-        echo "E-Mail : " $user->getEmail();
-        echo "Username : " $user->getUsername();
-        echo "NIP : " $user->getNip();
-        echo "NIP Baru : " $user->getNipBaru();
-        echo "Kode Organisasi : " $user->getKodeOrganisasi();
-        echo "Kode Provinsi : " $user->getKodeProvinsi();
-        echo "Kode Kabupaten : " $user->getKodeKabupaten();
-        echo "Alamat Kantor : " $user->getAlamatKantor();
-        echo "Provinsi : " $user->getProvinsi();
-        echo "Kabupaten : " $user->getKabupaten();
-        echo "Golongan : " $user->getGolongan();
-        echo "Jabatan : " $user->getJabatan();
-        echo "Eselon : " $user->getEselon();
+            echo "Nama : ".$user->getName();
+            echo "E-Mail : ". $user->getEmail();
+            echo "Username : ". $user->getUsername();
+            echo "NIP : ". $user->getNip();
+            echo "NIP Baru : ". $user->getNipBaru();
+            echo "Kode Organisasi : ". $user->getKodeOrganisasi();
+            echo "Kode Provinsi : ". $user->getKodeProvinsi();
+            echo "Kode Kabupaten : ". $user->getKodeKabupaten();
+            echo "Alamat Kantor : ". $user->getAlamatKantor();
+            echo "Provinsi : ". $user->getProvinsi();
+            echo "Kabupaten : ". $user->getKabupaten();
+            echo "Golongan : ". $user->getGolongan();
+            echo "Jabatan : ". $user->getJabatan();
+            echo "Eselon : ". $user->getEselon();
 
     } catch (Exception $e) {
         exit('Gagal Mendapatkan Data Pengguna: '.$e->getMessage());
