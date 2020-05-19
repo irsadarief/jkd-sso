@@ -92,6 +92,10 @@ class KeycloakResourceOwner implements ResourceOwnerInterface
     {
         return $this->response['eselon'] ?: null;
     }
+    public function getUrlFoto()
+    {
+        return $this->response['foto'] ?: null;
+    }
     public function toArray()
     {
         return $this->response;
