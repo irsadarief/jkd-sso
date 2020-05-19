@@ -78,7 +78,7 @@ All Notable changes to `jkd-sso` will be documented in this file
 - Nothing
 
 ### Fixed
-- Nothing
+- Realm : pegawai-bps
 
 ### Removed
 - Nothing
@@ -89,7 +89,7 @@ All Notable changes to `jkd-sso` will be documented in this file
 ## 1.3.0 - 2020-05-19
 
 ### Added
-- Update Readme & ResourceOwner Functions
+- Update Readme & ResourceOwner Functions To Accomodate Attribute Foto
 
 ### Deprecated
 - Nothing
