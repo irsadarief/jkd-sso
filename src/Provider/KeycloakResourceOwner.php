@@ -25,7 +25,7 @@ class KeycloakResourceOwner implements ResourceOwnerInterface
 
     public function getEmail()
     {
-        return $this->response['username']."@bps.go.id" ?: null;
+        return $this->response['email'] ?: null;
     }
 
     public function getName()
