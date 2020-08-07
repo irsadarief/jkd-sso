@@ -1,0 +1,76 @@
+swagger: '2.0'
+info:
+  description: API JKD-SSO (Single Sign-On) Untuk Badan Pusat Statistik 
+  version: 1.0.0
+  title: API JKD-SSO
+  
+  contact:
+    email: jkd@bps.go.id
+
+  
+# tags are used for organizing operations
+tags:
+- name: User
+  description: fungsi-fungsi yang tersedia untuk user
+
+paths:
+  /User:
+    get:
+      tags:
+      - User
+      operationId: userDetails
+      description: |
+        Mengembalikan informasi user yang sedang login
+      produces:
+      - application/json
+      responses:
+        200:
+          description: success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/User'
+        400:
+          description: bad input parameter
+    
+definitions:
+  User:
+    required:
+    - nama
+    - nip
+    - nipbaru
+    - namaDepan
+    - namaBelakang
+    properties:
+      nama:
+        type: string
+        example: Sensus Penduduk
+      nip:
+        type: string
+        example:  340099999
+      nipbaru:
+        type: string
+        example:  194517082019011001
+      namaDepan:
+        type: string
+        example: Sensus
+      namaBelakang:
+        type: string
+        example: Penduduk
+      jabatan:
+        type: string
+        example: Staf Seksi Sosial
+      provinsi:
+        type: string
+        example: Papua
+      kabupaten:
+        type: string
+        example: Kab. Teluk Bintuni
+      kodeOrganisasi:
+        type: string
+        example: 910400092820
+# Added by API Auto Mocking Plugin
+host: sso.bps.go.id
+basePath: /auth/realms/pegawai-bps/
+schemes:
+ - https
