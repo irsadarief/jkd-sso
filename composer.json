@@ -1,5 +1,5 @@
 {
-    "name": "irsadarief/jkd-sso",
+    "name": "cloudwalkerid/jkd-sso",
     "description": "BPS Single Sign On Client For PHP",
     "license": "GPL-3.0-only",
     "authors": [
@@ -7,6 +7,10 @@
             "name": "JKD",
             "email": "jkd@bps.go.id",
             "homepage": "https://git.bps.go.id/"
+        },
+        {
+            "name": "Cloudwalker ID",
+            "email": "cloudwalkerid@gmail.com"
         }
     ],
     "keywords": [
