@@ -7,11 +7,11 @@
 
 ## Instalasi
 
-Untuk menginstall, anda dapat menggunakan composer:
+<!-- Untuk menginstall, anda dapat menggunakan composer:
 
 ```
 composer require irsadarief/jkd-sso
-```
+``` -->
 Untuk yang belum menginstall composer, informasi mengenai instalasi dan penggunaan composer dapat diakses [disini](https://github.com/composer/composer).
 
 ## Penggunaan

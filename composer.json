@@ -1,5 +1,5 @@
 {
-    "name": "irsadarief/jkd-sso",
+    "name": "cloudwalkerid/jkd-sso",
     "description": "BPS Single Sign On Client For PHP",
     "license": "GPL-3.0-only",
     "authors": [
@@ -7,6 +7,10 @@
             "name": "JKD",
             "email": "jkd@bps.go.id",
             "homepage": "https://git.bps.go.id/"
+        },
+        {
+            "name": "Cloudwalker ID",
+            "email": "cloudwalkerid@gmail.com"
         }
     ],
     "keywords": [
@@ -19,13 +23,13 @@
         "keycloak"
     ],
     "require": {
-        "league/oauth2-client": "^2.0",
-        "firebase/php-jwt": "^4.0 || ^5.0"
+        "league/oauth2-client": "^2.7.0",
+        "firebase/php-jwt": "^v6.8.1"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4.0",
-        "mockery/mockery": "~0.9",
-        "squizlabs/php_codesniffer": "~2.0"
+        "phpunit/phpunit": "^10.1",
+        "mockery/mockery": "^1.4.4",
+        "squizlabs/php_codesniffer": "^3.7.2"
     },
     "autoload": {
         "psr-4": {
