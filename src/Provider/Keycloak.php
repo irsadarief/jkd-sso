@@ -140,8 +140,9 @@ class Keycloak extends AbstractProvider
                 json_encode(
                     JWT::decode(
                         $response,
+                        new Key(
                         $this->encryptionKey,
-                        array($this->encryptionAlgorithm)
+                        array($this->encryptionAlgorithm))
                     )
                 ),
                 true
